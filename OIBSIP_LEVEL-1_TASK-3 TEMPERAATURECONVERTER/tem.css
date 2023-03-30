@@ -1,0 +1,259 @@
+*{
+    margin: 1px;
+    padding: 1px;
+    box-sizing: border-box;
+    font-family: 'Garamond', sans-serif;
+  }
+
+  html{
+    scroll-behavior: smooth;
+  }
+
+  body{
+    width: 105%;
+    height: 205hv;
+    display: block;
+    justify-content: center;
+    flex-direction: column;
+    background: #6d0361;
+    opacity:0.6;
+
+  }
+
+  /* main content */
+  #container{
+    position: relative;
+    width: 300px;
+    margin: 5px auto;
+    padding: 45px;
+    border-radius: 15px;
+    background-color: #de4706e2;
+    box-shadow: 1px 1px 6px rgb(203, 194, 20);
+  }
+
+  #heading{
+    margin: 1px auto 30px auto;
+    text-align: center;
+  /*  font-size: var(--largeHeading); */
+    font-weight: 560;
+  }
+
+  /* calculations-container */
+  #calculations-container{
+    display: block;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    border-radius: 15px;
+    padding: 20px 30px;
+    color: var(--darkColor);
+    font-size: var(--smallHeading);
+    background-color: #c2a710;
+    box-shadow: 0px 0px 3px rgb(13, 8, 8);
+  }
+
+  /* content division */
+  .division{
+    width: 105%;
+  }
+
+  /* sub heading */
+  .division-heading{
+    display: flex;
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: var(--smallHeading);
+    font-weight: 560;
+    color: var(--lightColor);
+    padding: 1px 6px;
+    margin: 10px 5px 15px 5px;
+  }
+
+  .division-heading::before{
+    position: absolute;
+    top: 50%;
+    left: 100%;
+    transform: translateY(-50%);
+    content: "";
+    width: 75px;
+    height: 2px;
+    background-color: var(--lightColor);
+  }
+
+  .division-heading::after{
+    position: absolute;
+    top: 50%;
+    right: 100%;
+    transform: translateY(-50%);
+    content: "";
+    width: 75px;
+    height: 2px;
+    background-color: var(--lightColor);
+  }
+
+  /* inputs container */
+  .inputs-container{
+    display: grid;
+    grid-template-columns: 100%;
+    row-gap: 15px;
+  }
+
+  /* input elements (input boxes, dropdowns, button) */
+  .inputs{
+    width: 100%;
+    border: none;
+    outline: none;
+    border-radius: 10px;
+    font-size: var(--smallHeading);
+  }
+
+  /* input fields and select dropdowns */
+  .input-field , .dropdown {
+    padding:10px, 15px;
+    font-family: 'Monospace','Courier New', Courier, monospace;
+    background-color: white;
+    box-shadow: 5px 5px 10px rgb(22, 9, 9);
+  }
+
+  .dropdown, #btn, footer a{
+    cursor: pointer;
+  }
+
+  /* dropdown container */
+  .dropdown-container{
+    position: relative;
+  }
+
+  .dropdown-container::after{
+    position: absolute;
+    right: 10%;
+    top: 55%;
+    transform: translateY(-50%);
+    font-size: var(--smallHeading);
+    color: rgb(66, 61, 30);
+    content: "\25bc";
+    pointer-events: none;
+  }
+
+  /* dropdown */
+  .dropdown{
+    appearance: none;
+  }
+
+  /* clickable input field */
+  #input-box{
+    transition: 0.2s;
+    box-shadow: 0px 0px 5px rgb(22, 9, 9), inset 1px 1px 1px gold;
+  }
+
+  #input-box:focus{
+    box-shadow: 0px 0px 5px grey, inset 1px -3px 2px gold;
+  }
+
+  /* disabled input field */
+  #result-box{
+    background-color: rgb(255, 252, 207);
+  }
+
+  /* button */
+  #btn{
+    margin: 15px 3px;
+    padding: 13px;
+    color: var(--lightColor);
+    background-color: rgb(250, 165, 8);
+    box-shadow: 0px 0px 4px darkgoldenrod;
+    border-radius: 55px;
+  }
+
+  #btn:hover{
+    background-color: rgb(183, 159, 27);
+  }
+
+  #btn:active{
+    background-color: rgb(250, 165, 8);
+  }
+
+  /* footer section */
+  footer{
+    position: absolute;
+    width: 100%;
+    bottom: 7px;
+    font-size: 19px;
+    font-weight: 550;
+    color: var(--darkColor);
+    text-align: center;
+    padding: 15px 0px;
+  }
+
+  /* footer link */
+  footer a{
+    text-decoration: none;
+    color: beige;
+  }
+
+  footer a:hover{
+    color: rgb(217, 255, 0);
+  }
+
+
+  /* For large mobile devices */
+  @media(min-width: 485px){
+
+    #container{
+      width: 360px;
+      padding: 25px 30px;
+    }
+
+    #calculations-container{
+      padding: 25px 30px;
+    }
+
+    .input-field , .dropdown {
+      padding: 9px 12px;
+  }
+  }
+
+  /* For tablet devices */
+  @media(min-width: 768px){
+
+    :root{
+      --largeHeading: 1.7rem;
+      --smallHeading: 1.2rem;
+    }
+
+    #container{
+      width: 490px;
+      padding: 40px;
+    }
+
+    #heading{
+      margin: 1px auto 30px auto;
+    }
+
+    #calculation-container{
+      padding: 20px 45px;
+    }
+
+    .division-heading::before{
+      width: 100px;
+      height: 1.8px;
+    }
+
+    .division-heading::after{
+      width: 100px;
+      height: 1.8px;
+    }
+
+
+    .inputs-container{
+      display: grid;
+      grid-template-columns: 50% 50%;
+      justify-content: space-between;
+    }
+
+    .inputs{
+      font-weight: 560;
+    }
+
+   }
